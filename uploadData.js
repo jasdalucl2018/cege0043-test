@@ -7,13 +7,39 @@ function startDataUpload() {
     var module = document.getElementById("module").value;
     var postString = "name=" + name + "&surname=" + surname + "&module=" + module;
 
+
+// get the checkbox values - separate them with a | so that they can be
+    // split later on if necessary
+    var checkString = "";
+    for (var i = 1;i< 5;i++){
+    	if (document.getElementById("check"+i).checked === true) {
+    		checkString = checkString +
+    		document.getElementById("check"+i).value + "||"
+    	}
+    }
+    postString = postString + "&modulelist="+checkString;
+
+    // get the radio button values
+    if (document.getElementById("morning").checked) {
+    	postString=postString+"&lecturetime=morning";
+    }
+    if (document.getElementById("afternoon").checked) {
+    	postString=postString+"&lecturetime=afternoon";
+    }
+
+    // get the select box values
+    var language = document.getElementById("languageselectbox").value;
+    postString = postString + "&language="+language;
+
+
+
 	// 19-3-3 @12:37 adding code for pop up alert
 
 	alert (postString);
 
     // 19-3-1 @ 13;17 confirm that function actually runs
 
-    
+
     processData(postString);
 
 }
