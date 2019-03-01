@@ -7,10 +7,14 @@ function startDataUpload() {
     var module = document.getElementById("module").value;
     var postString = "name=" + name + "&surname=" + surname + "&module=" + module;
 
-// 19-3-3 @12:37 adding code for pop up alert
+	// 19-3-3 @12:37 adding code for pop up alert
 
-alert (postString);
+	alert (postString);
 
+    // 19-3-1 @ 13;17 confirm that function actually runs
+
+    
+    processData(postString);
 
 }
 
