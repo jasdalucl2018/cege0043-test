@@ -1,6 +1,7 @@
 function startDataUpload() {
 	alert ("start data upload")
-// 19-3-1 @12;31 amending function to get values from form and post mit to server
+    
+    // 19-3-1 @12;31 amending function to get values from form and post mit to server
 
 	var name = document.getElementById("name").value;
     var surname = document.getElementById("surname").value;
@@ -8,7 +9,7 @@ function startDataUpload() {
     var postString = "name=" + name + "&surname=" + surname + "&module=" + module;
 
 
-// get the checkbox values - separate them with a | so that they can be
+    // 19-3-1 adding get the checkbox values - separate them with a | so that they can be
     // split later on if necessary
     var checkString = "";
     for (var i = 1;i< 5;i++){
@@ -31,6 +32,12 @@ function startDataUpload() {
     var language = document.getElementById("languageselectbox").value;
     postString = postString + "&language="+language;
 
+
+    // include Lat & Long values
+
+    var latitude = document.getElementById("latitude").value;
+    var longitude = document.getElementById("longitude").value;
+    postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 
 
 	// 19-3-3 @12:37 adding code for pop up alert
